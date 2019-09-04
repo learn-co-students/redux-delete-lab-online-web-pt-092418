@@ -1,3 +1,5 @@
+let newBandId = 0
+
 export default function manageBand(state = {
   bands: []
 }, action) {
