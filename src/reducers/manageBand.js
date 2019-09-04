@@ -3,12 +3,15 @@ export default function manageBand(state = {
 }, action) {
   switch (action.type) {
     case 'ADD_BAND':
-
-      return { ...state, bands: [...state.bands, action.name] }
-    switch(action.type) {
+      newBandId++;
+      const newBand ={id: newBandId, name:action.name };
+      return { ...state, bands: [...state.bands, newBand] }
+    
       case 'DELETE_BAND':
-        return state.filter(band => band.id !== action.bandId)
-    }
+        return {
+          ...state,
+          bands: state.bands.filter(band => band.id !== action.id)
+        };
     default:
       return state;
   }
