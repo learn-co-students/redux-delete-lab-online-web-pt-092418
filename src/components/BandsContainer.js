@@ -4,14 +4,15 @@ import BandInput from './BandInput';
 import { connect } from 'react-redux'
 
 class BandsContainer extends Component {
-    addBand = (name) => {
-      this.props.addBand({name})
+    addBand = () => {
+      this.props.addBand()
     }
+    renderBand = () => this.props.bands.map((name, id) => <li key={id} name={name}/>)
   render() {
     return (
       <div>
         <BandInput addBand={(name) => this.props.addBand(name)}/>
-
+        {this.renderBand()}
       </div>
     )
   }
