@@ -17,7 +17,7 @@ class BandsContainer extends Component {
       <div>
         <BandInput addBand={name => this.props.addBand(name)}/>
         {this.renderBands()}
-        <button deleteBand={id => this.props.deleteBand(id)} />
+      
 
       </div>
     )
